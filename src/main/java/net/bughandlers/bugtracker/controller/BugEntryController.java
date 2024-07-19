@@ -17,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/bug")
+@RequestMapping("/bug-entry")
 public class BugEntryController {
 
     @Autowired
