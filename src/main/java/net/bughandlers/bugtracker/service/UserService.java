@@ -2,13 +2,9 @@ package net.bughandlers.bugtracker.service;
 
 
 import lombok.extern.slf4j.Slf4j;
-import net.bughandlers.bugtracker.model.Bug;
 import net.bughandlers.bugtracker.model.User;
-import net.bughandlers.bugtracker.repository.BugRepository;
 import net.bughandlers.bugtracker.repository.UserRepository;
 import org.bson.types.ObjectId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -55,12 +51,12 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> findById(ObjectId ID) {
-        return userRepository.findById(ID);
+    public Optional<User> findById(ObjectId id) {
+        return userRepository.findById(id);
     }
 
-    public Void deleteById(ObjectId ID) {
-        userRepository.deleteById(ID);
+    public Void deleteById(ObjectId id) {
+        userRepository.deleteById(id);
         return null;
     }
 
