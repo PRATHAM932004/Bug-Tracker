@@ -1,10 +1,13 @@
 package net.bughandlers.bugtracker.service;
 
 
+import lombok.extern.slf4j.Slf4j;
 import net.bughandlers.bugtracker.model.Bug;
 import net.bughandlers.bugtracker.model.User;
 import net.bughandlers.bugtracker.repository.BugRepository;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 @Component
 public class BugEntryService {
 
@@ -23,6 +27,8 @@ public class BugEntryService {
 
     @Autowired
     private UserService userService;
+
+
 
     @Transactional
     public void saveEntry(Bug bug, String userName) {
@@ -61,7 +67,7 @@ public class BugEntryService {
                 bugRepository.deleteById(ID);
             }
         }catch (Exception e){
-            System.out.println(e);
+            log.error(e.getMessage());
             throw new RuntimeException("An error occured while deleting entry", e);
         }
         return removed;

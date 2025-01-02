@@ -17,8 +17,7 @@ public class BugTrackerApplication {
 	}
 
 	@Bean
-	public PlatformTransactionManager sdwefew(MongoDatabaseFactory dbFactory) {
+	public PlatformTransactionManager xyz(MongoDatabaseFactory dbFactory) {
 		return new MongoTransactionManager(dbFactory);
 	}
-
 }

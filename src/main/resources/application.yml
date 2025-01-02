@@ -1,11 +1,9 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://prathambhoraniya09:pbRFsvs1u2dlO6US@cluster0.33vima4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      database: bug
-      auto-index-creation: true
+  profiles:
+    active: dev
 
-server:
-  port: 8080
-  servlet:
-    context-path: /bug
+logging:
+  level:
+    net:
+      bughandlers:
+        bugtracker: TRACE
